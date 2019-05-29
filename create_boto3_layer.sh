@@ -24,7 +24,7 @@ do
     -r=*|--region=*)
        region="${i#*=}"
        ;;
-    -v=*|--version=*)
+    -b=*|--boto3=*)
        boto3version="${i#*=}"
        ;;
     -p=*|--python=*)
@@ -49,15 +49,15 @@ DESCRIPTION\n
 OPTIONS\n
 \t -h | --help : Display this help\n
 \n
+\t  -b | --boto3 : (Optional) Specify the version of boto3.\n
+\t\t\t If not specified, will retrieve the latest version.\n
+\n
 \t -p | --python : (Optional) Specify the version of python for which you want to create the layer.\n
 \t\t\t If not specified, will create for all versions of python.\n
 \t\t\t Possible values: 2.7 | 3.6 | 3.7\n
 \n
 \t  -r | --region : (Optional) Specify the region in which you want to create the layer.\n
 \t\t\t If not specified, use the region configured with AWS cli.\n
-\n
-\t  -v | --version : (Optional) Specify the version of boto3.\n
-\t\t\t If not specified, will retrieve the latest version.\n
        "
        echo ${helpmessage}
        exit 0
