@@ -30,11 +30,11 @@ This shell script provides an easy way to create a Lambda Layer with the latest 
  	 -b | --boto3 : (Optional) Specify the version of boto3.
  			 If not specified, will retrieve the latest version.
  			 
- 	 -p | --python : (Optional) Specify the version of python for which you want to create the layer.
+ 	 -p | --python : (Optional) Specify the version of python for which you want to create the Layer.
  			 If not specified, will create for all versions of python.
  			 Possible values: 2.7 | 3.6 | 3.7
 
- 	 -r | --region : (Optional) Specify the region in which you want to create the layer.
+ 	 -r | --region : (Optional) Specify the region in which you want to create the Layer.
  			 If not specified, use the region configured with AWS CLI.
  			 
 ### Samples
@@ -65,8 +65,8 @@ will retrieve the latest version of boto3 and create a Layer compatible with all
 ``./create_boto3_layer.sh --boto3=1.9.157 --python=3.7 --region=eu-west-1`` 
 will retrieve version 1.9.157 of boto3 and create a Layer compatible with python 3.7 in eu-west-1.
 
-### Add the layer to a function
-When the script is done, it provides the Layer ARN, that you can use in any compatible lambda function.
+### Add the Layer to a function
+When the script is done, it provides the Layer ARN, that you can use in any compatible Lambda function.
 
 #### With the CLI
 You can just type:
@@ -77,15 +77,15 @@ You can just type:
 
 First select the Layers in your function and click "Add a layer":
 
-![](lambda_add_layer.png)
+![](img/lambda_add_layer.png)
 
-Then, choose the appropriate Layer (compatible with your lambda runtime) and click "Add":
+Then, choose the appropriate Layer (compatible with your Lambda runtime) and click "Add":
 
-![](lambda_add_layer2.png)
+![](img/lambda_add_layer2.png)
 
-Finally, verify Layers associated to your lambda:
+Finally, verify Layers associated to your Lambda:
 
-![](lambda_add_layer3.png)
+![](img/lambda_add_layer3.png)
 
 ### Test
 In your python code, you can get the boto3 version like this:
@@ -99,4 +99,4 @@ def lambda_handler(event, context):
 
 Then you should get the correct version:
 
-![](logs.png)
+![](img/logs.png)
